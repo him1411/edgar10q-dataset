@@ -1,6 +1,6 @@
 # EDGAR10-Q Dataset
 
-This dataset is built from 10-Q documents (Quarterly Reports) of publicly listed companies on the SEC. To access these documents, follow [this link](https://www.sec.gov/os/accessing-edgar-data). The script ie_parser.py contains code to create key-value pairs from “facts” in the XBRL files by mapping the attribute’s value with its corresponding label.
+This dataset is built from 10-Q documents (Quarterly Reports) of publicly listed companies on the SEC. To access these documents, follow [this link](https://www.sec.gov/os/accessing-edgar-data). The script ie_parser.py contains code to create key-value pairs from “facts” in the XBRL files by mapping the attribute’s value with its corresponding label. Please see sample.csv to find the instance of a document of the dataset. 
 
 
 Some Statistics about the corpus are given below : 
