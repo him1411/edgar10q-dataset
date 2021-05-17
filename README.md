@@ -3,7 +3,7 @@
 This dataset is built from 10-Q documents (Quarterly Reports) of publicly listed companies on the SEC. To access these documents, follow [this link](https://www.sec.gov/os/accessing-edgar-data). The script ie_parser.py contains code to create key-value pairs from “facts” in the XBRL files by mapping the attribute’s value with its corresponding label. Please see sample.csv to find the instance of a document of the dataset. To get CIK of an organization, use the CIK lookup available here. 
 
 
-##Building Dataset
+## Building Dataset
 
 To all the files of an org, run the function get_all_submissions in xbrl_scraper.py. The files downloaded will be in txt format. To parse these documents and extract relevant key value pairs, use IE_parser() in ie_parser.py. The function takes XBRL text string as input
 
