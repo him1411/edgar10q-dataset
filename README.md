@@ -1,6 +1,6 @@
 # EDGAR10-Q Dataset
 
-This dataset is built from 10-Q documents (Quarterly Reports) of publicly listed companies on the SEC. To access these documents, follow [this link](https://www.sec.gov/os/accessing-edgar-data). The script ie_parser.py contains code to create key-value pairs from “facts” in the XBRL files by mapping the attribute’s value with its corresponding label. Please see sample.csv to find the instance of a document of the dataset. To get CIK of an organization, use the CIK lookup available here. 
+This dataset is built from 10-Q/K documents (Quarterly and Yearly Reports) of publicly listed companies on the SEC. To access these documents, follow [this link](https://www.sec.gov/os/accessing-edgar-data). Please see sample.csv to find the instance of a document of the dataset. To get CIK of an organization, use the CIK_lookup in contents folder. 
 
 
 ## Dataset
@@ -10,7 +10,11 @@ The dataset is available via [this link](https://arizonastateu-my.sharepoint.com
 
 ## Building Dataset
 
-To all the files of an org, run the function get_all_submissions in xbrl_scraper.py. The files downloaded will be in txt format. To parse these documents and extract relevant key value pairs, use IE_parser() in ie_parser.py. The function takes XBRL text string as input
+Using the script dataset_generation_and_baseline.py will pull the the data from sec website and store it in content folder. cik_lookup.xlsx has the list of 2000 organizations whose data was pulled. The script will also run the baseline approach and store all the results in each organizations' excel respectively.
+
+
+## GPT-3 response generation
+Once the dataset is created and baseline appraoch is executed and the excel is complete, use the script gpt3_response_generation.py for getting the reuslts from GPT-3. Please use your own API key for its execution.
 
 
 Some Statistics about the corpus are given below : 
@@ -19,13 +23,11 @@ Table 1 : Basic Statistics of the dataset
 
 | Statistics about the corpus             | Numbers |
 |-----------------------------------------|---------|
-| Total  # of Documents in Corpus         | 19468   |
-| Documents in which entities were tagged | 18752   |
-| Number of Paragraphs                    | 670767  |
-| Total Words in paragraphs               | 19468   |
-| Number of Sentences                     | 973655  |
-| Total Entities                          | 1783617 |
-| Total Labels                            | 3528849 |
+| Total  # of Documents in Corpus         | 18752   |
+| Number of Sentences                     | 1009712 |
+| Total Words in corpus                   | 77400425|
+| Total Entities                          | 2780969 |
+| Total Labels                            | 4032405 |
 
 
 Table 2 : Sentence Wise Statistics of the dataset
@@ -33,25 +35,21 @@ Table 2 : Sentence Wise Statistics of the dataset
 
 | Sentences with # of Entities | # of Sentences | Average Word Length of the Sentence |
 |------------------------------|---------------:|-------------------------------------|
-| 1 Entity                     | 477341         | 33.50                               |
-| 2 Entity                     | 336552         | 38.94                               |
-| 3 Entity                     | 64449          | 51.05                               |
-| 4 Entity                     | 68144          | 54.87                               |
-| 5 Entity                     | 12683          | 58.96                               |
-| 6 and above                  | 14486          | 78.71                               |
+| 1 Entity                     | 503433         | 31.70                               |
+| 2 Entity                     | 331130         | 36.30                               |
+| 3 Entity                     | 108103         | 42.40                               |
+| 4 Entity                     | 47191          | 52.80                               |
+| 5 Entities and above         | 19855          | 73.90                               |
 
 
 Table 3 : Statistics of the entities in the dataset
 
-|    Entity Types   |  Counts |
-|:-----------------:|:-------:|
-| monetary ItemType | 1214552 |
-| percent ItemType  | 216113  |
-| pure ItemType     | 14017   |
-| duration ItemType | 84071   |
-| shares ItemType   | 180778  |
-| integer ItemType  | 74086   |
-
+|    Entity Types                       |  Counts |
+|--------------------------------------:|:-------:|
+| Floating Values (Monetary & percent)  | 2143054 |
+| number of assests (Shares & Integers) | 425850  |
+| Ordinal Values                        | 16891   |
+| Dates                                 | 195174  |
 
 Table 4 :  Instance of the Dataset.
 
