@@ -1,4 +1,4 @@
-# EDGAR10-Q Dataset
+# EDGAR10-Q Dataset [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/zero-shot-open-information-extraction-using/contextner-on-edgar10-q-dataset)](https://paperswithcode.com/sota/contextner-on-edgar10-q-dataset?p=zero-shot-open-information-extraction-using)
 
 This dataset is built from 10-Q/K documents (Quarterly and Yearly Reports) of publicly listed companies on the SEC. To access these documents, follow [this link](https://www.sec.gov/os/accessing-edgar-data). Please see sample.csv to find the instance of a document of the dataset. To get CIK of an organization, use the CIK_lookup in contents folder. 
 
