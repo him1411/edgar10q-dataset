@@ -92,3 +92,17 @@ Table 2: Statistics about dataset:
 | FPB      | 51.07             | 55.77    | 79.69          |
 | Headline | 82.20             | 90.55    | 93.55          |
 
+
+BibTeX Entry and Citation Info
+===============
+If you are using our model, please cite our paper:
+
+```bibtex
+@article{gupta2021context,
+  title={Context-NER: Contextual Phrase Generation at Scale},
+  author={Gupta, Himanshu and Verma, Shreyas and Kumar, Tarun and Mishra, Swaroop and Agrawal, Tamanna and Badugu, Amogh and Bhatt, Himanshu Sharad},
+  journal={arXiv preprint arXiv:2109.08079},
+  year={2021}
+}
+```
+
