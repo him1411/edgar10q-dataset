@@ -81,6 +81,8 @@ Table 2: Statistics about dataset:
 
 ![Imgur](https://i.imgur.com/sR4zFvt.png)
 
+## Supervised Finetuning
+Use supervised_deepspeed_finetuning.sh for finetuning any model on EDGAR10-Q dataset.
 
 
 ## Results on Dowstream datasets
