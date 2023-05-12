@@ -5,28 +5,6 @@ This dataset is built from 10-Q/K documents (Quarterly and Yearly Reports) of pu
 You may want to check out 
 * Our paper: [CONTEXT-NER: Contextual Phrase Generation at Scale](https://arxiv.org/abs/2109.08079/)
 
-## Building Dataset
-
-Using the script dataset_generation_and_baseline.py will pull the the data from sec website and store it in content folder. cik_lookup.xlsx has the list of 2000 organizations whose data was pulled. The script will also run the baseline approach and store all the results in each organizations' excel respectively.
-
-
-## ChatGPT response generation
-Once the dataset is created and baseline appraoch is executed and the excel is complete, use the script chatgpt_responses.py for getting the reuslts from ChatGPT. Please use your own API key for its execution.
-
-
-Table 1 :  Instance of the Dataset.
-|                                                                        Sentence                                                                       |    value    | entity type |                          Labels for each entity                          |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------:|:-----------:|:------------------------------------------------------------------------:|
-| As of August 5, 2019, there were 46,662,179 shares of common stock, $0.01 par value, outstanding.                                                      | 4,66,62,179 | CARDINAL    | Shares Outstanding                               |
-| The Company also derecognized existing deferred rent liabilities of $15,302.                                                                           | 15,302      | MONEY       | Rent Expense                                        |
-| The intangible assets acquired have a weighted average useful life of approximately nine years.                                                        | nine years  | DATE        | Intangible assets |
-| The initial purchase price of $31,676 included $30,176 cash consideration paid upon acquisition,  funded primarily through borrowings under the Senior | 31,676      | MONEY       | Initial purchase price |
-| Credit Facility, and a contingent earn out payment of up to $25,000 with an estimated fair  value of $1,500 as of the acquisition date.                | 30,176      | MONEY       | Payments to  Acquire Businesses                      |
-
-
-Table 2: Statistics about dataset: 
-
-![Imgur](https://i.imgur.com/zlXq2Cp.png)
 
 
 ## Dataset Access
@@ -72,9 +50,45 @@ The dataset is split into train, validation, and test sets. The sizes of the spl
 Please checkout the hugging face model cards on how to use them. 
 
 
+
+## Building Dataset
+
+Using the script dataset_generation_and_baseline.py will pull the the data from sec website and store it in content folder. cik_lookup.xlsx has the list of 2000 organizations whose data was pulled. The script will also run the baseline approach and store all the results in each organizations' excel respectively.
+
+
+## ChatGPT response generation
+Once the dataset is created and baseline appraoch is executed and the excel is complete, use the script chatgpt_responses.py for getting the reuslts from ChatGPT. Please use your own API key for its execution.
+
+
+Table 1 :  Instance of the Dataset.
+|                                                                        Sentence                                                                       |    value    | entity type |                          Labels for each entity                          |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------:|:-----------:|:------------------------------------------------------------------------:|
+| As of August 5, 2019, there were 46,662,179 shares of common stock, $0.01 par value, outstanding.                                                      | 4,66,62,179 | CARDINAL    | Shares Outstanding                               |
+| The Company also derecognized existing deferred rent liabilities of $15,302.                                                                           | 15,302      | MONEY       | Rent Expense                                        |
+| The intangible assets acquired have a weighted average useful life of approximately nine years.                                                        | nine years  | DATE        | Intangible assets |
+| The initial purchase price of $31,676 included $30,176 cash consideration paid upon acquisition,  funded primarily through borrowings under the Senior | 31,676      | MONEY       | Initial purchase price |
+| Credit Facility, and a contingent earn out payment of up to $25,000 with an estimated fair  value of $1,500 as of the acquisition date.                | 30,176      | MONEY       | Payments to  Acquire Businesses                      |
+
+
+Table 2: Statistics about dataset: 
+
+![Imgur](https://i.imgur.com/zlXq2Cp.png)
+
+
+
+
 ## Results for baseline algorithm, ChatGPT responses and supervised learning models
 
 ![Imgur](https://i.imgur.com/sR4zFvt.png)
 
 
+
+## Results on Dowstream datasets
+[EDGAR-T5-Large](https://huggingface.co/him1411/EDGAR-T5-Large) was finetuned on some downstream datasets to get better results than T5 large. BloombergGPT 50B was used as baseline. 
+
+| Dataset  | Bloomberg GPT 50B | T5 Large | Edgar T5 Large |
+|----------|-------------------|----------|----------------|
+| FiQA SA  | 75.07             | 74.89    | 80.42          |
+| FPB      | 51.07             | 55.77    | 79.69          |
+| Headline | 82.20             | 90.55    | 93.55          |
 
