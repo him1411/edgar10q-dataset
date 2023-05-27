@@ -43,7 +43,7 @@ The dataset is split into train, validation, and test sets. The sizes of the spl
 1. [EDGAR-T5-base](https://huggingface.co/him1411/EDGAR-T5-base)
 2. [EDGAR-BART-Base](https://huggingface.co/him1411/EDGAR-BART-Base)
 3. [EDGAR-flan-t5-base](https://huggingface.co/him1411/EDGAR-flan-t5-base)
-4. [EDGAR-T5-Large](https://huggingface.co/him1411/EDGAR-T5-Large)
+4. [EDGAR-T5-Large](https://huggingface.co/him1411/EDGAR-T5-Large) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/zero-shot-open-information-extraction-using/contextner-on-edgar10-q-dataset)](https://paperswithcode.com/sota/contextner-on-edgar10-q-dataset?p=zero-shot-open-information-extraction-using)
 5. [EDGAR-Tk-Instruct-Large](https://huggingface.co/him1411/EDGAR-Tk-Instruct-Large)
 6. [Instruction tuned EDGAR-Tk-Instruct-base](https://huggingface.co/him1411/EDGAR-Tk-instruct-base-inst-tune)
 
