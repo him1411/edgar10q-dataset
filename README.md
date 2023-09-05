@@ -13,10 +13,10 @@ The dataset is freely available to use on huggingface as [EDGAR10-Q dataset](htt
 
 Here is how to access it: 
 
-'''
+```
 from datasets import load_dataset
 dataset = load_dataset("him1411/EDGAR10-Q")
-'''
+```
 
 
 ### Data Fields
