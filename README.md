@@ -2,22 +2,6 @@
 
 This dataset is built from 10-Q/K documents (Quarterly and Yearly Reports) of publicly listed companies on the SEC. To access these documents, follow [this link](https://www.sec.gov/os/accessing-edgar-data). Please see sample.csv to find the instance of a document of the dataset. To get CIK of an organization, use the CIK_lookup in contents folder. 
 
-You may want to check out 
-* Our paper: [CONTEXT-NER: Contextual Phrase Generation at Scale](https://arxiv.org/abs/2109.08079/)
-
-
-
-## Dataset Access
-
-The dataset is freely available to use on huggingface as [EDGAR10-Q dataset](https://huggingface.co/datasets/him1411/EDGAR10-Q)
-
-Here is how to access it: 
-
-```
-from datasets import load_dataset
-dataset = load_dataset("him1411/EDGAR10-Q")
-```
-
 
 ### Data Fields
 
@@ -35,19 +19,6 @@ The dataset is split into train, validation, and test sets. The sizes of the spl
 | Instances | 1,498,995 | 187,383    |187,383|
 
 
-
-## Supervised Trained Models
-
-6 sequence to sequence models were finetuned/ instruction tuned using the train split of the dataset. They are: 
-
-1. [EDGAR-T5-base](https://huggingface.co/him1411/EDGAR-T5-base)
-2. [EDGAR-BART-Base](https://huggingface.co/him1411/EDGAR-BART-Base)
-3. [EDGAR-flan-t5-base](https://huggingface.co/him1411/EDGAR-flan-t5-base)
-4. [EDGAR-T5-Large](https://huggingface.co/him1411/EDGAR-T5-Large) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/zero-shot-open-information-extraction-using/contextner-on-edgar10-q-dataset)](https://paperswithcode.com/sota/contextner-on-edgar10-q-dataset?p=zero-shot-open-information-extraction-using)
-5. [EDGAR-Tk-Instruct-Large](https://huggingface.co/him1411/EDGAR-Tk-Instruct-Large)
-6. [Instruction tuned EDGAR-Tk-Instruct-base](https://huggingface.co/him1411/EDGAR-Tk-instruct-base-inst-tune)
-
-Please checkout the hugging face model cards on how to use them. 
 
 
 
@@ -86,7 +57,7 @@ Use supervised_deepspeed_finetuning.sh for finetuning any model on EDGAR10-Q dat
 
 
 ## Results on Dowstream datasets
-[EDGAR-T5-Large](https://huggingface.co/him1411/EDGAR-T5-Large) was finetuned on some downstream datasets to get better results than T5 large. BloombergGPT 50B was used as baseline. 
+[EDGAR-T5-Large] was finetuned on some downstream datasets to get better results than T5 large. BloombergGPT 50B was used as baseline. 
 
 | Dataset  | Bloomberg GPT 50B | T5 Large | Edgar T5 Large |
 |----------|-------------------|----------|----------------|
@@ -94,17 +65,4 @@ Use supervised_deepspeed_finetuning.sh for finetuning any model on EDGAR10-Q dat
 | FPB      | 51.07             | 55.77    | 79.69          |
 | Headline | 82.20             | 90.55    | 93.55          |
 
-
-BibTeX Entry and Citation Info
-===============
-If you are using our model, please cite our paper:
-
-```bibtex
-@article{gupta2021context,
-  title={Context-NER: Contextual Phrase Generation at Scale},
-  author={Gupta, Himanshu and Verma, Shreyas and Kumar, Tarun and Mishra, Swaroop and Agrawal, Tamanna and Badugu, Amogh and Bhatt, Himanshu Sharad},
-  journal={arXiv preprint arXiv:2109.08079},
-  year={2021}
-}
-```
 
